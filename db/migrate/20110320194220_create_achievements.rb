@@ -6,6 +6,7 @@ class CreateAchievements < ActiveRecord::Migration
       t.string :action
       t.datetime :timestamp
       t.integer :points
+      t.string :description
 
       t.timestamps
     end

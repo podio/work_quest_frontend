@@ -19,7 +19,9 @@ class Achievement < ActiveRecord::Base
         user.achievements.create(
           :source => achievement.source,
           :action => achievement.action,
-          :timestamp => Time.at(achievement.date.time/1000)
+          :timestamp => achievement.date, # Time.at(achievement.date.time/1000)
+          :description => achievement.description,
+          :points => achievement.points
         )
       end
     end

@@ -1,9 +1,13 @@
 <%= form_for current_user, :url => user_path, :method => :put do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
   
   <%= f.submit 'Update' %>
 <% end %>
