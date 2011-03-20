@@ -7,6 +7,7 @@ gem 'rails', '3.0.5'
 
 gem 'activerecord-jdbcsqlite3-adapter'
 gem 'jquery-rails'
+gem 'sass'
 
 # Use unicorn as the web server
 # gem 'unicorn'

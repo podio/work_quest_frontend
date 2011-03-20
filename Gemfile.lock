@@ -68,6 +68,7 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.8.7)
+    sass (3.1.0.alpha.249)
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -81,3 +82,4 @@ DEPENDENCIES
   activerecord-jdbcsqlite3-adapter
   jquery-rails
   rails (= 3.0.5)
+  sass

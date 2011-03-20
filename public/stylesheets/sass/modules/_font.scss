@@ -1,0 +1,25 @@
+@import "shared";
+
+@mixin font($size) {
+  font-size: $size;
+}
+
+@mixin font-mini() {
+  // 10px
+  @include font(77%)
+}
+
+@mixin font-small() {
+  // 11px
+  @include font(85%)
+}
+
+@mixin font-normal() {
+  // 12px
+  @include font(93%)
+}
+
+@mixin font-header() {
+  // 14px
+  @include font(108%)
+}

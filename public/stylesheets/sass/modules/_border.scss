@@ -1,0 +1,27 @@
+// Provides a quick way of getting "inset" and "outset" borders for gray stuff
+@mixin border-outset($bgcolor: #F7F7F7, $light-color: $color-border-inset-light, $dark-color: $color-border-inset-dark, $text-shadow: true) {
+  // background: #F7F7F7;
+  // border-right: $color-border-outset-dark;
+  // border-bottom: $color-border-outset-dark;
+  // border-left: $color-border-outset-light;
+  // border-top: $color-border-outset-light;
+  background-color: $bgcolor;
+  border-right: $dark-color;
+  border-bottom: $dark-color;
+  border-left: $light-color;
+  border-top: $light-color;
+  @if $text-shadow {
+    text-shadow: 1px 1px 0 #FFF;
+  }
+}
+
+@mixin border-inset($bgcolor: #D8D8D8, $light-color: $color-border-inset-light, $dark-color: $color-border-inset-dark, $text-shadow: true) {
+  background-color: $bgcolor;
+  border-right: $light-color;
+  border-bottom: $light-color;
+  border-left: $dark-color;
+  border-top: $dark-color;
+  @if $text-shadow {
+    text-shadow: 1px 1px 0 #FFF;
+  }
+}
