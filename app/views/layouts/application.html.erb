@@ -8,15 +8,19 @@
 </head>
 <body>
 
-  <h1>WorkQuest</h1>
-  <hr />
-  <%= link_to 'Dashboard', dashboard_path %> |
-  <%= link_to 'Profile', edit_user_path %> |
-  <%= link_to 'Settings', edit_settings_path %>
+  <div class="page">
+    <h1>WorkQuest</h1>
+    <hr />
+    <%= link_to 'Dashboard', dashboard_path %> |
+    <%= link_to 'Profile', edit_user_path %> |
+    <%= link_to 'Settings', edit_settings_path %>
 
-  <%= show_flash_messages(flash) %>
+    <%= show_flash_messages(flash) %>
 
-  <%= yield %>
+    <div class="content">
+      <%= yield %>
+    </div>
+  </div>
 
 </body>
 </html>

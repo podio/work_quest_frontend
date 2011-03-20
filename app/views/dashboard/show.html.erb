@@ -1,16 +1,42 @@
-<h1>You recently completes WorkQuests</h1>
-<%= form_tag refresh_achievements_path do %>
-  <%= submit_tag 'Refresh achivements' %>
-<% end %>
+<div class="dashboard">
+  <div class="user">
+    <div class="name"><%= current_user.name %></div>
+    <div class="points"><%= current_user.points %></div>
+  </div>
 
-<ul>
-<% for achievement in current_user.achievements %>
-  <li>
-    <h3><%= achievement.source %></h3>
-    <p><%= achievement.action %></p>
-    <% if achievement.timestamp.present? %>
-      <p><%= time_ago_in_words(achievement.timestamp) %> ago</p>
+  <div class="achievements">
+    
+    <h1>Your recent WorkQuest activity</h1>
+    <%= form_tag refresh_achievements_path do %>
+      <%= submit_tag 'Refresh achivements' %>
     <% end %>
-  </li>
-<% end %>
-</ul>
+    
+    <ul>
+      <% for achievement in current_user.achievements %>
+        <li>
+          <h3><%= achievement.source %></h3>
+          <p><%= achievement.action %></p>
+          <% if achievement.timestamp.present? %>
+            <p><%= time_ago_in_words(achievement.timestamp) %> ago</p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  
+  <div class="leaderboard">
+    <ol>
+      <li>Raj Kumar</li>
+      <li>Tabitha Donag</li>
+      <li>Thuon Chen</li>
+      <li>Manish Shah</li>
+      <li>Tran Binh Ngoc</li>
+      <li>George Courtsunis</li>
+      <li>Zac Bowling</li>
+      <li>Kelly Mashery</li>
+      <li>Vincenzo</li>
+      <li>Andrew Hubbs</li>
+    </ol>
+  </div>
+
+</div>
