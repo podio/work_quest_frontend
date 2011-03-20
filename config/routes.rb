@@ -1,7 +1,13 @@
 WorkQuest::Application.routes.draw do
   
+  devise_for :users
+
   root :to => "dashboard#show"
-  
+  resource :dashboard, :controller => 'dashboard'
+  resources :achievements do
+    post :refresh, :on => :collection
+  end
+  resource :user, :only => [:edit, :update], :controller => 'users'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

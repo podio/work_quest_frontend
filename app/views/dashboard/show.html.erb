@@ -1,0 +1,14 @@
+<h1>You recently completes WorkQuests</h1>
+<%= form_tag refresh_achievements_path do %>
+  <%= submit_tag 'Refresh achivements' %>
+<% end %>
+
+<ul>
+<% for achievement in current_user.achievements %>
+  <li>
+    <h3><%= achievement.source %></h3>
+    <p><%= achievement.action %></p>
+    <p><%= time_ago_in_words(achievement.timestamp) %> ago</p>
+  </li>
+<% end %>
+</ul>

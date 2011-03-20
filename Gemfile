@@ -8,6 +8,9 @@ gem 'rails', '3.0.5'
 gem 'activerecord-jdbcsqlite3-adapter'
 gem 'jquery-rails'
 gem 'sass'
+gem "devise"
+gem 'devise_rpx_connectable'
+gem 'ruby-debug'
 
 # Use unicorn as the web server
 # gem 'unicorn'
