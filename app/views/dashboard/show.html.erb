@@ -8,7 +8,9 @@
   <li>
     <h3><%= achievement.source %></h3>
     <p><%= achievement.action %></p>
-    <p><%= time_ago_in_words(achievement.timestamp) %> ago</p>
+    <% if achievement.timestamp.present? %>
+      <p><%= time_ago_in_words(achievement.timestamp) %> ago</p>
+    <% end %>
   </li>
 <% end %>
 </ul>

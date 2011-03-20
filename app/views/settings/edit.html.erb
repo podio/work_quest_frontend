@@ -1,2 +1,22 @@
-<h1>Settings#edit</h1>
-<p>Find me in app/views/settings/edit.html.erb</p>
+<%= form_tag settings_path, :method => :put do %>
+  
+  <p>
+    <%= label_tag 'Zendesk username: ' %>
+    <%= text_field_tag 'setting_zendesk_username', Setting.find_by_source_and_key('zendesk', 'username').try(:value) %><br />
+    <%= label_tag 'Zendesk password: ' %>
+    <%= text_field_tag 'setting_zendesk_password', Setting.find_by_source_and_key('zendesk', 'password').try(:value) %><br />
+    <%= label_tag 'Zendesk subdomain: ' %>
+    <%= text_field_tag 'setting_zendesk_subdomain', Setting.find_by_source_and_key('zendesk', 'subdomain').try(:value) %><br />
+    <%= label_tag 'Zendesk SSL: ' %>
+    <%= text_field_tag 'setting_zendesk_ssl', Setting.find_by_source_and_key('zendesk', 'ssl').try(:value) %><br />
+  </p>
+
+  <p>
+    <%= label_tag 'Podio username: ' %>
+    <%= text_field_tag 'setting_podio_username', Setting.find_by_source_and_key('podio', 'username').try(:value) %><br />
+    <%= label_tag 'Podio password: ' %>
+    <%= text_field_tag 'setting_podio_password', Setting.find_by_source_and_key('podio', 'password').try(:value) %><br />
+  </p>
+
+  <p><%= submit_tag 'Update' %></p>
+<% end %>
