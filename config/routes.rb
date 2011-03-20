@@ -7,7 +7,7 @@ WorkQuest::Application.routes.draw do
   resources :achievements do
     post :refresh, :on => :collection
   end
-  
+  resource :user, :only => [:edit, :update], :controller => 'users'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
