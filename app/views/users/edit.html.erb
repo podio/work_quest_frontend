@@ -1,0 +1,9 @@
+<%= form_for current_user, :url => user_path, :method => :put do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  
+  <%= f.submit 'Update' %>
+<% end %>

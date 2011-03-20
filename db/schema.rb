@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20110320201727) do
     t.string   "source"
     t.string   "action"
     t.datetime "timestamp"
+    t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20110320201727) do
     t.string   "name"
     t.string   "rpx_identifier"
     t.integer  "points"
+    t.datetime "last_updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

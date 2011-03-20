@@ -10,6 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :rpx_identifier
       t.integer :points
+      t.datetime :last_updated_at
     end
 
     add_index :users, :email,                :unique => true
