@@ -1,0 +1,16 @@
+@import "shared";
+
+// This technique, by [Justin Maxwell](http://code404.com/), was originally
+// published [here](http://mattsnider.com/css/css-string-truncation-with-ellipsis/).
+@mixin ellipsis($no-wrap: true) {
+  @if $no-wrap { white-space: nowrap; }
+  overflow: hidden;
+  @include experimental(text-overflow, ellipsis,
+    not -moz,
+    not -webkit,
+    -o,
+    -ms,
+    not -khtml,
+    official
+  );
+}

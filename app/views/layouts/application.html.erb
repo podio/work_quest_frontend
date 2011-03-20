@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>WorkQuest</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag 'base', :media => 'all' %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
-<%= yield %>
+  <h1>WorkQuest</h1>
+  <hr />
+
+  <%= yield %>
 
 </body>
 </html>
