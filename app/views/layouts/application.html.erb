@@ -9,18 +9,33 @@
 <body>
 
   <div class="page">
-    <h1>WorkQuest</h1>
-    <hr />
-    <%= link_to 'Dashboard', dashboard_path %> |
-    <%= link_to 'Profile', edit_user_path %> |
-    <%= link_to 'Settings', edit_settings_path %>
+    <div class="header">
+      <div class="inner">
+        <%= link_to image_tag('headerlogo.png'), root_path %>
+        <ul class="links">
+          <li><%= link_to 'Dashboard', dashboard_path %></li>
+          <li><%= link_to 'Profile', edit_user_path %></li>
+          <li><%= link_to 'Settings', edit_settings_path %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path %></li>
+        </ul>
+      </div>
+    </div>
 
-    <%= show_flash_messages(flash) %>
+    <div class="flash">
+      <%= show_flash_messages(flash) %>
+    </div>
 
     <div class="content">
-      <%= yield %>
+      <div class="inner">
+        <%= yield %>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
     </div>
+    
+    <div class="clear"></div>
   </div>
 
+  <div class="clear"></div>
 </body>
 </html>

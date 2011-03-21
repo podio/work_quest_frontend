@@ -1,16 +1,178 @@
-body {
-  background-image: url('/images/bg.png');
-  
-  
-  .page {
-    width:960px;
-    margin:0 auto;
+html {
+  height:100%;
+  color:#343434;
 
-    .dashboard {
-      .user  {
-      }
+  body {
+    height:100%;
+    background-image: url('/images/bg.png');
+    background-color:#B6BBBE;
+
+    .clear {
+      clear:both;
     }
-  }
 
-  
+    .page {
+      width:960px;
+      margin:0 auto;
+      
+      a {
+        color:#343434;
+        text-decoration:none;
+        
+        &:hover {
+          text-decoration:underline;
+        }
+      }
+      
+      .flash {
+      	padding: 1em;
+      }
+      .flash.alert {border: 1px solid #cd0a0a; background-color: #fef1ec; color: #cd0a0a; }
+      .flash.alert a { color: #cd0a0a; }
+      .flash.notice {border: 1px solid #999; background-color: #DAF9D9; }
+      
+      
+      .header {
+        background-color:#fff;
+        border:1px solid #A7A7A7;
+        
+        .inner {
+          background-color:#DBDBDA;
+          margin:1px;
+          height:50px;
+          
+          img {
+            float:left;
+            margin:10px 20px;
+          }
+          
+          ul.links {
+            float:right;
+            li {
+              float:left;
+              text-transform:uppercase;
+              line-height:50px;
+              font-weight:bold;
+              margin-right:15px;
+            }
+          }
+        }
+      }
+      
+      .content {
+        background-color:#fff;
+        border:1px solid #A7A7A7;
+        margin-top:15px;
+        
+        .inner {
+          background-color:#DBDBDA;
+          margin:1px;
+
+          .dashboard {
+            .user  {
+              height:150px;
+              border-bottom:1px solid #A7A7A7;
+              
+              .name {
+                font-size:150%;
+                float:left;
+                font-weight:bold;
+                margin:20px;
+              }
+              .points {
+                float:right;
+                font-weight:bold;
+                margin-right:200px;
+
+                em {
+                  font-size:800%;
+                }
+              }
+            }
+            
+            .achievements {
+              background-color:#F3F3F3;
+              float:left;
+              width:700px;
+              
+              p {
+                margin-left:20px;
+              }
+              
+              .heading {
+                border-bottom:1px solid #A7A7A7;
+                padding:20px 20px 0 20px;
+                height:30px;
+                
+                h2 {
+                  float:left;
+                }
+                
+                form {
+                  float:right;
+                }
+              }
+              
+              ul {
+                margin-top:20px;
+                li {
+                  height:100px;
+                  clear:both;
+                  
+                  img {
+                    float:left;
+                    margin-left:20px;
+                  }
+                  .points {
+                    float:left;
+                    font-weight:bold;                    
+                    font-size:200%;
+                    margin:20px;
+                  }
+                  .text {
+                    padding-top:18px;
+                    width:500px;
+                    .action {
+                      font-weight:bold;                    
+                      font-size:120%;
+                    }
+                    .description {
+                    }
+                    
+                  }
+                  .timestamp {
+                    float:right;
+                    margin-right:20px;
+                    color:#aaa;
+                  }
+                }
+              }
+            }
+            
+            .leaderboard {
+              float:right;
+              width:230px;
+              padding-top:20px;
+              padding-left:20px;
+              
+              .heading {
+                font-weight:bold;                    
+                font-size:120%;
+                border-bottom:1px solid #A7A7A7;
+              }
+              
+              ol {
+                margin-top:10px;
+                li {
+                  list-style-type:decimal;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }  
 }
+

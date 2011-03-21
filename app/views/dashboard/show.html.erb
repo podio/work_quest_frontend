@@ -1,42 +1,51 @@
 <div class="dashboard">
   <div class="user">
-    <div class="name"><%= current_user.name %></div>
-    <div class="points"><%= current_user.points %></div>
+    <div class="name"><%= current_user.name || 'No Name' %></div>
+    <div class="points"><em><%= current_user.points || 0 %></em> points</div>
   </div>
 
   <div class="achievements">
     
-    <h1>Your recent WorkQuest activity</h1>
-    <%= form_tag refresh_achievements_path do %>
-      <%= submit_tag 'Refresh achivements' %>
-    <% end %>
+    <div class="heading">
+      <h2>Your recent achievements</h2>
+      <%= form_tag refresh_achievements_path do %>
+        <%= submit_tag 'Refresh achievements' %>
+      <% end %>
+    </div>
     
     <ul>
-      <% for achievement in current_user.achievements %>
-        <li>
-          <h3><%= achievement.source %></h3>
-          <p><%= achievement.action %></p>
-          <% if achievement.timestamp.present? %>
-            <p><%= time_ago_in_words(achievement.timestamp) %> ago</p>
-          <% end %>
-        </li>
+      <% if @achievements.empty? %>
+        <p>No achievements - click the refresh button if you've done something</p>
+      <% else %>
+        <% for achievement in @achievements %>
+          <li>
+            <%= image_tag "#{achievement.source}.png" %>
+            <div class="points">+<%= achievement.points %></div>
+            <div class="text">
+              <div class="action"><%= humanize_action(achievement.action) %></div>
+              <div class="description"><%= achievement.description %></div>
+            </div>
+            <% if achievement.timestamp.present? %>
+              <div class="timestamp">about <%= time_ago_in_words(achievement.timestamp) %> ago</div>
+            <% end %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
   </div>
   
   <div class="leaderboard">
-    <ol>
-      <li>Raj Kumar</li>
-      <li>Tabitha Donag</li>
-      <li>Thuon Chen</li>
-      <li>Manish Shah</li>
-      <li>Tran Binh Ngoc</li>
-      <li>George Courtsunis</li>
-      <li>Zac Bowling</li>
-      <li>Kelly Mashery</li>
-      <li>Vincenzo</li>
-      <li>Andrew Hubbs</li>
-    </ol>
+    <div class="heading">Leaderboard</div>
+    <% if @leadboard_users.empty? %>
+      No users with points
+    <% else %>
+      <ol>
+        <% for user in @leadboard_users %>
+          <li><%= user.name %> (<%= user.points %> points)</li>
+        <% end %>
+      </ol>
+    <% end %>
   </div>
 
+  <div class="clear"></div>
 </div>
